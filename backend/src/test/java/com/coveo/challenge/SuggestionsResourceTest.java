@@ -5,6 +5,7 @@ package com.coveo.challenge;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
@@ -24,7 +25,7 @@ public class SuggestionsResourceTest
     SuggestionsResource suggestionsResource = new SuggestionsResource();
 
     @BeforeEach                                         
-    void setUp() {
+    void setUp() throws IOException {
         ReflectionTestUtils.setField(suggestionsResource, "indexSearch", new SearchBean());
         ReflectionTestUtils.setField(suggestionsResource, "fileSearch", new SearchFile());
     }
@@ -59,4 +60,18 @@ public class SuggestionsResourceTest
 
         Assertions.assertEquals(b, a);
     }
+
+    @Test
+    public void testSearchEndpoint() throws Throwable
+    {
+        Map<String, Object> results = new HashMap<>();
+        results.put("cities", new ArrayList<>());
+        results.put("total", 0);
+        results.put("page", 0);
+        Map<String, Object> actual = suggestionsResource.search("test", null, null, null);
+        assertEquals(actual.get("page"), 0);
+        // fuzzy search will get limit
+        assertEquals(actual.get("total"), 5);
+    }
+
 }

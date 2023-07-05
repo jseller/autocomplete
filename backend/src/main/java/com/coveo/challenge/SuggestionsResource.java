@@ -45,4 +45,24 @@ public class SuggestionsResource {
         System.out.println(results);
         return results;
     }
+
+
+    @CrossOrigin(origins = "*")
+    @RequestMapping("/search")
+    public Map<String, Object> search(@RequestParam String q,
+            @RequestParam(required = false) Double latitude,
+            @RequestParam(required = false) Double longitude,
+            @RequestParam(required = false) Integer page)
+            {
+
+        System.out.println(new Date() + " --- Entering search endpoint parameters are: q=" + q + ", latitude="
+                + String.valueOf(latitude) + ", longitude=" + String.valueOf(longitude));
+        Map<String, Object> results = new HashMap<>();
+        SearcherParams params = new SearcherParams(q, latitude, longitude, page);
+        results = indexSearch.getResults(params);
+        System.out.println(results);
+        return results;
+    }
+
+
 }

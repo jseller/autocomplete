@@ -20,8 +20,13 @@ describe('SuggestionsService', () => {
   });
 
   it('suggestions', () => {
-    let res = service.getSuggestion('','','');
+    let res = service.getSuggestion('','','', 0);
     expect(res).resolves.toHaveLength(0);
+  });
+
+  it('suggestions', () => {
+    let res = service.getSuggestion('vi','','', 0);
+    expect(res).resolves.toHaveLength(3);
   });
 
 });

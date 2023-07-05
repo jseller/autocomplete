@@ -8,8 +8,8 @@ export class SuggestionsController {
     constructor(private readonly suggestionsService: SuggestionsService) {}
 
     @Get()
-    getSuggestion(@Query("q") query: string, @Query("lat") lat: string, @Query("lon") lon: string) {
-      return this.suggestionsService.getSuggestion(query, lat, lon);
+    getSuggestion(@Query("q") query: string, @Query("latitude") lat: string, @Query("longitude") lon: string, @Query("page") page: number) {
+      return this.suggestionsService.getSuggestion(query, lat, lon, page);
     }
   
 

@@ -25,7 +25,7 @@ export class SuggestionsService {
 
   constructor(private configService: ConfigService) {
     const nodeEnv = this.configService.get<string>('NODE_ENV');
-    const filePath = (nodeEnv === 'test' || nodeEnv == null) ? './src/CAsmall.txt' : './src/CA.txt'
+    const filePath = (nodeEnv === 'test') ? './src/CAsmall.txt' : './src/CA.txt'
     const content = readFileSync(
       path.join(process.cwd(), filePath), { encoding: 'utf8'}
     );
@@ -50,14 +50,17 @@ export class SuggestionsService {
       });
     stream.write(content);
     stream.end();
+    this.logger.log("data initialized")
   }
 
   async getSuggestion(
     query: string,
     latitude: string,
     longitude: string,
+    page: number
   ): Promise<Array<Suggestion>> {
     let matches = Array<Suggestion>();
+    this.logger.log("request for "+ query);
     if (this.searcher) {
       const results = this.searcher.search(query, { returnMatchData: true });
       results.forEach((e) => {
@@ -65,6 +68,7 @@ export class SuggestionsService {
         this.logger.log(e);
         // get the matches that start the sentance
         // if the lat lon is supplied, sort by shortest distance
+        // if paged, slice by 5 and the page offset
         if (matchInfo.index === 0) {
             const place = <PlacesRow> e.item;
             matches.push({

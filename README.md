@@ -27,17 +27,6 @@ Feature: Suggest valid street names as users type
     Then the provided street names include common destinations within reasonable walking distance
 
 
-# Solution
-
-## Quality Attribute Dependencies:
-
-Accuracy
-Completeness
-Recognition Reliability
-
-* * use fuzzy matching with levenstien distance
-
-
 Scenario: User starts typing a street name
 
 Given a user has logged in and provided proper authentication credentials
@@ -62,6 +51,18 @@ Then the system should suggest the remaining characters needed to complete the n
 Furthermore, the system should offer this suggestion as one of the top two choices presented to the user
 Within 2 seconds of receiving this prompt, the user should accept the proposed completion without needing to enter additional keystrokes or scroll through another set of options
 
+
+
+# Solution
+
+## Usability
+
+Accuracy
+* browser gives timezone, asking for location can have friction
+
+Recognition Reliability
+* user can type what the word sounds like, so exact match can miss. Fuzzy match
+* * use fuzzy matching with levenstien distance
 
 
 Cross-Functional

@@ -6,7 +6,7 @@ public class SearcherParams {
         this.q = q;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.page = page;
+        this.page = page == null? 0: page;
     }
 
     public String q;

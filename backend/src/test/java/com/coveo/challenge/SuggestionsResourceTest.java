@@ -16,7 +16,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import com.coveo.challenge.search.City;
-import com.coveo.challenge.search.CsvParser;
 import com.coveo.challenge.search.SearchEngine.SearchBean;
 import com.coveo.challenge.search.SearchFile;
 
@@ -26,7 +25,6 @@ public class SuggestionsResourceTest
 
     @BeforeEach                                         
     void setUp() {
-        ReflectionTestUtils.setField(suggestionsResource, "csvParser", new CsvParser());
         ReflectionTestUtils.setField(suggestionsResource, "indexSearch", new SearchBean());
         ReflectionTestUtils.setField(suggestionsResource, "fileSearch", new SearchFile());
     }
@@ -38,7 +36,8 @@ public class SuggestionsResourceTest
         results.put("cities", new ArrayList<>());
         results.put("total", 0);
         results.put("page", 0);
-        Assertions.assertEquals(results, suggestionsResource.suggestions("test", null, null, null));
+        Map<String, Object> actual = suggestionsResource.suggestions("test", null, null, null);
+        Assertions.assertEquals(results, actual);
     }
 
     @Test

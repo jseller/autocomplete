@@ -1,6 +1,7 @@
 package com.coveo.challenge.search;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
@@ -17,10 +18,11 @@ public class CsvParser
      * Read and parse the cities from a TSV file.
      * @param file The file that contains all the cities separated by tabs
      * @return An HashMap with the key being the city id and the value the city instance.
+     * @throws IOException
      */
-    public HashMap<Number, City> readCities(InputStream file)
+    public HashMap<Number, City> readCities(InputStream file) throws IOException
     {
-        BufferedReader reader;
+        BufferedReader reader = null;
         HashMap<Number, City> cities = new HashMap<>();
         try {
             reader = new BufferedReader(new InputStreamReader(file));
@@ -69,10 +71,11 @@ public class CsvParser
                 // read next line
                 line = reader.readLine();
             }
-
-            reader.close();
-        } catch (Throwable e) {
-            e.printStackTrace();
+        }
+        finally {
+            if (reader != null) {
+                reader.close();
+            }
         }
 
         return cities;

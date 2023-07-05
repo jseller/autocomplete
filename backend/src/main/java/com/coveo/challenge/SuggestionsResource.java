@@ -35,20 +35,14 @@ public class SuggestionsResource {
             @RequestParam(required = false) Double latitude,
             @RequestParam(required = false) Double longitude,
             @RequestParam(required = false) Integer page)
-            throws Throwable {
+            {
 
         System.out.println(new Date() + " --- Entering suggestions endpoint parameters are: q=" + q + ", latitude="
                 + String.valueOf(latitude) + ", longitude=" + String.valueOf(longitude));
-
         Map<String, Object> results = new HashMap<>();
-        try {
-            SearcherParams params = new SearcherParams(q, latitude, longitude, page);
-            results = fileSearch.getResults(params);
-            System.out.println(results);
-
-        } catch (UnsupportedOperationException e) {
-            System.out.println(e);
-        }
+        SearcherParams params = new SearcherParams(q, latitude, longitude, page);
+        results = fileSearch.getResults(params);
+        System.out.println(results);
         return results;
     }
 }

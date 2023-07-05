@@ -63,9 +63,13 @@ export class SuggestionsService {
     this.logger.log("request for "+ query);
     if (this.searcher) {
       const results = this.searcher.search(query, { returnMatchData: true });
-      results.forEach((e) => {
+      let idx = 0;
+      for (let e of results) {
         const matchInfo = e.match;
-        this.logger.log(e);
+        if (idx > 5) {
+          break;
+        }
+        idx++;
         // get the matches that start the sentance
         // if the lat lon is supplied, sort by shortest distance
         // if paged, slice by 5 and the page offset
@@ -78,7 +82,7 @@ export class SuggestionsService {
               longitude: place.longitude,
             });
         }
-      });
+      };
     }
     return matches;
   }

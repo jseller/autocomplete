@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -61,7 +62,7 @@ public class SearchFile implements Searcher {
             total = Math.toIntExact(this.cities.stream().filter(predicate).count());
         }
         results.put("page", page);
-        List<City> filtered = this.cities.stream().filter(predicate).skip(page).limit(limit).toList();
+        List<City> filtered = this.cities.stream().filter(predicate).skip(page).limit(limit).collect(Collectors.toList());
         if (total == 0) {
             total = filtered.size();
         }

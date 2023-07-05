@@ -1,0 +1,24 @@
+3424953	Virgin Rocks	Virgin Rocks		46.42886	-50.81995	U	RFU	CA		05				0		-9999		2018-02-20
+3425041	Eastern Shoals	Eastern Shoals		46.44743	-50.48577	U	SHSU	CA		05				0		-9999		2018-02-20
+3426061	Downing Basin	Downing Basin		47.05216	-50.79163	U	TRGU	CA		05				0		-9999		2018-02-20
+3831549	Kane Basin	Kane Basin	Bassin Kane,Kane Basin	79.3886	-70.42541	H	STRT	CA	GL	14				0		-9999		2018-06-04
+3831631	Georges Shoal	Georges Shoal	Georges Bank,Saint George's Bank,St. George's Bank,St. George's Shoal	41.65444	-67.73242	U	SHLU	CA	US					0		-9999		2021-02-20
+4030308	Swiftsure Bank	Swiftsure Bank		48.55422	-124.99317	U	BNKU	CA		02				0		-9999	America/Vancouver	2022-04-12
+4960922	River De Chute	River De Chute	Chute's River,River De Chute,River DeChute	46.59333	-67.72616	P	PPL	CA		04	1311			0		80	America/Moncton	2020-01-27
+4977402	Saint John River	Saint John River	Fleuve Saint-Jean,La Riviere Saint Jean,Long River,Loshtock,Ouy goody,Oxgoudy,Riviere Saint-Jean,Rivière Saint-Jean,Saint Jhons River,Saint John's River,Wallastook,Woolastook	45.26664	-66.06525	H	STM	CA		04				0	0	0	America/Moncton	2014-09-24
+5130529	Parish Dock	Parish Dock	Parish Dock,Parish's Dock	44.74951	-75.44967	S		CA		08				0	73	72	America/Toronto	2018-07-17
+5881639	100 Mile House	100 Mile House	One Hundred Mile House	51.64982	-121.28594	P	PPL	CA		02	5941	5941005		1980		928	America/Vancouver	2019-11-26
+5881640	101 Mile Lake	101 Mile Lake		51.6675	-121.29361	H	LK	CA		02				0		959	America/Vancouver	2013-07-21
+5881641	101 Ponds	101 Ponds		47.811	-53.97733	H	PNDS	CA		05				0		16	America/St_Johns	2006-01-18
+5881642	103 Mile Lake	103 Mile Lake		51.685	-121.29861	H	LK	CA		02				0		894	America/Vancouver	2013-07-21
+5881643	105 Mile House	105 Mile House		51.69982	-121.31935	P	PPLL	CA		02				0		908	America/Vancouver	2006-01-18
+5881644	105 Mile Lake	105 Mile Lake		51.71444	-121.32889	H	LK	CA		02				0		886	America/Vancouver	2013-07-21
+5881645	105 Mile Post Indian Reserve 2	105 Mile Post Indian Reserve 2	Reserve indienne 105 Mile Post 2,Réserve indienne 105 Mile Post 2	50.73306	-121.3193	L	RESV	CA		02				0		494	America/Vancouver	2018-01-14
+5881646	106-Narrow Lake-120 Road Corridor Game Preserve	106-Narrow Lake-120 Road Corridor Game Preserve		54.28341	-104.63417	L	RES	CA		11				0		633	America/Regina	2006-01-18
+5881647	108 Mile Lake	108 Mile Lake		51.74222	-121.36222	H	LK	CA		02				0		884	America/Vancouver	2013-07-21
+5881648	108 Mile Ranch	108 Mile Ranch	108 Mile House,ZMH	51.74983	-121.35266	L	AREA	CA		02				0		890	America/Vancouver	2016-01-04
+5881649	10th Line Shore	10th Line Shore		45.09194	-76.15056	P	PPL	CA		08	3509	3509024		0		137	America/Toronto	2019-02-26
+5881650	111 Mile Creek	111 Mile Creek		51.79983	-121.46939	H	STM	CA		02				0		806	America/Vancouver	2006-01-18
+5881651	111 Mile House	111 Mile House		51.76653	-121.38597	P	PPLL	CA		02				0		842	America/Vancouver	2006-01-18
+5881652	114 Mile House	114 Mile House		51.79983	-121.43598	P	PPLL	CA		02				0		877	America/Vancouver	2006-01-18
+5881653	117 Mile Creek	117 Mile Creek		51.81653	-121.48599	H	STM	CA		02				0		807	America/Vancouver	2006-01-18

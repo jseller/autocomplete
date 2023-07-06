@@ -21,7 +21,7 @@ public class SearchFile implements Searcher {
 
     List<City> cities = null;
 
-    public SearchFile() {
+    public SearchFile() throws IOException {
         this.indexData();
     }
 
@@ -38,15 +38,11 @@ public class SearchFile implements Searcher {
     }
 
     @Override
-    public void indexData() {
+    public void indexData() throws IOException {
         CsvParser csvParser = new CsvParser();
         ClassLoader classLoader = getClass().getClassLoader();
-        try {
-            this.cities = new ArrayList<>(csvParser.readCities(classLoader.getResourceAsStream("data/cities_canada-usa.tsv"))
+        this.cities = new ArrayList<>(csvParser.readCities(classLoader.getResourceAsStream("data/cities_canada-usa.tsv"))
                             .values());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         System.out.println("File data initialized " + cities.size());
     }
 

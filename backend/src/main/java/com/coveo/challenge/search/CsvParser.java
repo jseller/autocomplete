@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 
 import org.springframework.stereotype.Repository;
@@ -25,7 +26,7 @@ public class CsvParser
         BufferedReader reader = null;
         HashMap<Number, City> cities = new HashMap<>();
         try {
-            reader = new BufferedReader(new InputStreamReader(file));
+            reader = new BufferedReader(new InputStreamReader(file, StandardCharsets.UTF_8));
 
             // Skip the first line.
             reader.readLine();

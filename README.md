@@ -3,11 +3,11 @@ autocomplete addresses in a scalable way
 
 Feature: Suggest valid street names as users type
 
-  Scenario: User starts typing a street name
-    Given a user begins entering text into the street address field
-    When the system provides a list of matching street names starting with the first few characters the user entered
-    And the user continues to type additional characters to refine the selection
-    Then the system updates the list of matched street names to show only those starting with the newly added characters
+>  Scenario: User starts typing a street name
+  >  Given a user begins entering text into the street address field
+  >  When the system provides a list of matching street names starting with the first few characters the user entered
+  >  And the user continues to type additional characters to refine the selection
+  >  Then the system updates the list of matched street names to show only those starting with the newly added characters
     
   Scenario: User receives accurate results while typing
     Given a user enters some text resembling a street name

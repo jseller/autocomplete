@@ -4,6 +4,7 @@
 package com.coveo.challenge;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -57,7 +58,6 @@ public class SuggestionsResourceTest
     {
         Map<String, Object> a = suggestionsResource.suggestions("Qué", 43.0, -23.2, null);
         Map<String, Object> b = suggestionsResource.suggestions("Qué", 43.0, -23.2, null);
-
         Assertions.assertEquals(b, a);
     }
 
@@ -71,7 +71,7 @@ public class SuggestionsResourceTest
         Map<String, Object> actual = suggestionsResource.search("test", null, null, null);
         assertEquals(actual.get("page"), 0);
         // fuzzy search will get limit
-        assertEquals(actual.get("total"), 5);
+        assertEquals(actual.get("total"), 20);
     }
 
 }

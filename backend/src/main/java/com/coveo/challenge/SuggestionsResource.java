@@ -30,7 +30,7 @@ public class SuggestionsResource {
     private SearchBean indexSearch;
 
     @CrossOrigin(origins = "*")
-    @RequestMapping("/suggestions")
+    @RequestMapping(value="/suggestions", produces={"application/json; charset=UTF-8"})
     public Map<String, Object> suggestions(@RequestParam String q,
             @RequestParam(required = false) Double latitude,
             @RequestParam(required = false) Double longitude,
@@ -48,7 +48,7 @@ public class SuggestionsResource {
 
 
     @CrossOrigin(origins = "*")
-    @RequestMapping("/search")
+    @RequestMapping(value="/search", produces={"application/json; charset=UTF-8"})
     public Map<String, Object> search(@RequestParam String q,
             @RequestParam(required = false) Double latitude,
             @RequestParam(required = false) Double longitude,

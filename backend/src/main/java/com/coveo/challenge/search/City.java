@@ -1,9 +1,14 @@
 package com.coveo.challenge.search;
 
+import java.util.Arrays;
+import java.util.List;
+
+import com.miguelfonseca.completely.data.Indexable;
+
 /**
  * Class representing a city and it's attributes.
  */
-public class City
+public class City  implements Indexable
 {
     /**
      * The unique id of the city.
@@ -81,4 +86,10 @@ public class City
     public String admin2;
     public String admin3;
     public String admin4;
+
+
+    @Override
+    public List<String> getFields() {
+        return Arrays.asList(ascii);
+    }
 }

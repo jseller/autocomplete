@@ -27,8 +27,8 @@ public class SearchFile implements Searcher {
 
     private Predicate<City> buildFilter(String q, Double latitude, Double longitude) {
         Predicate<City> nameFilter = c -> c.name.contains(q);
-        Predicate<City> latFilter = c -> Math.abs(c.latitude - latitude) < 10;
-        Predicate<City> lonFilter = c -> Math.abs(c.longitude - longitude) < 20;
+        Predicate<City> latFilter = c -> Math.abs(c.latitude - latitude) < 2;
+        Predicate<City> lonFilter = c -> Math.abs(c.longitude - longitude) < 2;
         if (latitude != null && longitude != null) {
             nameFilter = nameFilter.and(lonFilter).and(latFilter);
         } else if (latitude != null) {
@@ -42,9 +42,8 @@ public class SearchFile implements Searcher {
         CsvParser csvParser = new CsvParser();
         ClassLoader classLoader = getClass().getClassLoader();
         try {
-            this.cities = new ArrayList<>(
-                    List.copyOf(csvParser.readCities(classLoader.getResourceAsStream("data/cities_canada-usa.tsv"))
-                            .values()));
+            this.cities = new ArrayList<>(csvParser.readCities(classLoader.getResourceAsStream("data/cities_canada-usa.tsv"))
+                            .values());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -55,7 +54,7 @@ public class SearchFile implements Searcher {
     public Map<String, Object> getResults(SearcherParams params) {
         Predicate<City> predicate = this.buildFilter(params.q, params.latitude, params.longitude);
         Map<String, Object> results = new HashMap<>();
-        Integer limit = 5;
+        Integer limit = 50;
         Integer total = 0;
         Integer page = params.page;
         if (page > 0) {
